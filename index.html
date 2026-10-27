@@ -32,13 +32,13 @@
   ::selection{background:var(--accent);color:#fff}
 
   /* ============ nav ============ */
-  .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:24px 44px;color:#fff;transition:padding .35s var(--ease),background .35s,box-shadow .35s}
-  .nav.solid{background:rgba(246,242,236,.97);color:var(--ink);padding:13px 44px;box-shadow:0 1px 0 var(--line);backdrop-filter:blur(10px)}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 44px;background:rgba(255,255,255,.98);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+  .nav.solid{padding:13px 44px}
   .brand{display:flex;align-items:center;flex:none}
-  .brand img{height:56px;width:auto;display:block;transition:height .35s var(--ease)}
-  .nav.solid .brand img{height:48px}
-  .links{display:flex;gap:36px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase}
-  .links a{position:relative;padding-bottom:5px;display:inline-block;color:var(--accent-soft);text-shadow:0 0 10px rgba(217,132,132,.35);transition:color .25s,transform .25s var(--ease),text-shadow .25s}
+  .brand img{height:66px;width:auto;display:block;transition:height .35s var(--ease)}
+  .nav.solid .brand img{height:56px}
+  .links{display:flex;gap:32px;font-size:13.5px;letter-spacing:.18em;text-transform:uppercase}
+  .links a{position:relative;padding-bottom:5px;display:inline-block;color:var(--accent);transition:color .25s,transform .25s var(--ease)}
   .nav.solid .links a{color:var(--accent);text-shadow:none}
   .links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:currentColor;transition:width .35s var(--ease)}
   .links a:hover,.links a.active{color:#fff;transform:scale(1.3);text-shadow:0 0 14px rgba(255,255,255,.65)}
@@ -46,15 +46,14 @@
   .links a:hover::after,.links a.active::after{width:100%}
   .nav-right{display:flex;align-items:center;gap:26px}
   .nav-cta{border:1px solid currentColor;padding:11px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:.25s}
-  .nav:not(.solid) .nav-cta:hover{background:#fff;color:var(--wine);border-color:#fff}
-  .nav.solid .nav-cta{background:var(--accent);border-color:var(--accent);color:#fff}
-  .nav.solid .nav-cta:hover{background:var(--wine);border-color:var(--wine)}
+  .nav-cta{background:var(--accent);border-color:var(--accent);color:#fff}
+  .nav-cta:hover{background:var(--wine);border-color:var(--wine)}
   .burger{display:none;background:none;border:0;color:inherit;font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;padding:6px 0}
   @media(max-width:960px){
     .nav{padding:18px 22px}
     .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--wine);color:#fff;flex-direction:column;gap:0;padding:6px 22px 16px}
     .links.open{display:flex}
-    .links a{padding:13px 0;border-bottom:1px solid var(--line-inv)}
+    .links a{padding:13px 0;border-bottom:1px solid var(--line-inv);color:#fff}
     .nav-cta{display:none}
     .burger{display:block}
     .brand img{height:40px}.nav.solid .brand img{height:34px}
@@ -70,7 +69,7 @@
   .hero .eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;margin-bottom:30px;background:linear-gradient(100deg,#F6F2EC 25%,var(--accent-soft) 45%,#fff 55%,#F6F2EC 75%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(217,132,132,.35));animation:shine 4.5s linear infinite}
   .hero .eyebrow::before,.hero .eyebrow::after{content:"";width:64px;height:1.5px;background:var(--accent-soft);box-shadow:0 0 10px rgba(217,132,132,.9),0 0 22px rgba(217,132,132,.5)}
   @keyframes shine{from{background-position:130% 0}to{background-position:-130% 0}}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,7vw,96px);line-height:1.0;letter-spacing:-.02em;margin:0 auto;max-width:15ch;text-wrap:balance}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,72px);line-height:1.05;letter-spacing:-.02em;margin:0 auto;max-width:16ch;text-wrap:balance}
   h1 em{font-style:normal;color:var(--accent-soft)}
   .hero .lede{margin:30px auto 0;max-width:52ch;font-size:15.5px;line-height:1.9;color:rgba(255,255,255,.82)}
   .hero-actions{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:84px;flex-wrap:wrap}
@@ -81,22 +80,14 @@
   .btn:hover svg{transform:translateX(4px)}
   .link-quiet{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:6px;transition:.25s}
   .link-quiet:hover{color:#fff;border-color:#fff}
-  .hero-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid var(--line-inv)}
-  .hero-foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:20px 0;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-  .hero-foot span{cursor:default;color:var(--accent-soft);text-shadow:0 0 10px rgba(217,132,132,.3);transition:color .25s,transform .25s var(--ease),text-shadow .25s}
-  .hero-foot span:hover{color:#fff;transform:scale(1.3);text-shadow:0 0 16px rgba(255,255,255,.7)}
+  .hero-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;background:#fff;border-top:1px solid var(--line)}
+  .hero-foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:20px 0;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase}
+  .hero-foot span{cursor:default;color:var(--accent);transition:color .25s,transform .25s var(--ease)}
+  .hero-foot span:hover{color:var(--wine);transform:scale(1.3)}
   .scroll-cue{position:absolute;right:44px;bottom:120px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.65);font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl}
   .scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);animation:cue 2.2s ease-in-out infinite}
   @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
   @media(max-width:760px){.scroll-cue{display:none}.hero-inner{padding-bottom:130px}}
-
-  /* ============ marquee ============ */
-  .marquee{background:var(--accent);color:#fff;overflow:hidden;padding:13px 0;border-top:1px solid rgba(0,0,0,.15)}
-  .marquee-track{display:flex;gap:0;white-space:nowrap;animation:mq 30s linear infinite;width:max-content}
-  .marquee span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;padding:0 28px;position:relative}
-  .marquee span::after{content:"";position:absolute;right:-3px;top:50%;width:5px;height:5px;background:#fff;border-radius:50%;transform:translateY(-50%);opacity:.7}
-  @keyframes mq{to{transform:translateX(-50%)}}
-  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.hero-bg{animation:none}.hero .eyebrow{animation:none;background:none;color:#fff}}
 
   /* ============ section shell ============ */
   .sec{padding:120px 0}
@@ -107,13 +98,11 @@
   .split{display:grid;grid-template-columns:1.02fr .98fr;gap:84px;align-items:center}
   @media(max-width:960px){.split{grid-template-columns:1fr;gap:44px}}
   .split p{margin:0 0 20px;color:#3D3934}
-  .drop::first-letter{font-family:var(--serif);font-size:52px;line-height:.9;float:left;padding:6px 12px 0 0;color:var(--accent)}
+  .drop::first-letter{font-family:var(--serif);font-size:44px;line-height:1;color:var(--accent);margin-right:5px}
 
   /* framed image */
   .frame{position:relative}
   .frame img{position:relative;z-index:1;width:100%;height:auto}
-  .frame::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--accent);z-index:0}
-  .frame figcaption{position:absolute;z-index:2;bottom:18px;left:18px;background:var(--wine);color:rgba(255,255,255,.85);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:9px 14px}
 
   /* ============ work ============ */
   .work{background:var(--wine-deep);color:#fff}
@@ -125,13 +114,19 @@
   .item{position:relative;overflow:hidden;background:#0C0203}
   .item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),opacity .5s;display:block}
   .item:hover img{transform:scale(1.05)}
-  .item .cap{position:absolute;inset:auto 0 0 0;padding:60px 26px 22px;background:linear-gradient(180deg,transparent,rgba(10,2,3,.85));display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
-  .item .cap b{font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.01em}
-  .item .cap span{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-soft);white-space:nowrap}
   .item{grid-column:span 6}
   .item.big{grid-column:span 12}
   .item.big img{aspect-ratio:21/9}
   .item:not(.big) img{aspect-ratio:4/2.55}
+  .item{cursor:zoom-in}
+  .item img{filter:brightness(.92) saturate(1.02)}
+  .item:hover img{filter:brightness(1.12) saturate(1.08);box-shadow:0 0 0 1px rgba(255,255,255,.18),0 12px 44px rgba(0,0,0,.55)}
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:#050202;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:200;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);cursor:zoom-out;padding:32px}
+  .lightbox.open{opacity:1;pointer-events:auto}
+  .lightbox img{max-width:min(1100px,92vw);max-height:78vh;width:auto;height:auto;box-shadow:0 30px 90px rgba(0,0,0,.7);transform:scale(.94);transition:transform .35s var(--ease)}
+  .lightbox.open img{transform:scale(1)}
+  .lightbox .lb-title{font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:.5px}
   @media(max-width:760px){.item,.item.big{grid-column:span 12}.item.big img{aspect-ratio:16/9}.item:not(.big) img{aspect-ratio:4/2.7}}
 
   /* ============ gold band ============ */
@@ -160,30 +155,50 @@
   @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
   @media(max-width:540px){.steps{grid-template-columns:1fr}}
 
+  /* ============ team ============ */
+  .team-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:40px 26px;margin-top:64px}
+  .member{grid-column:span 2;background:var(--wine);padding:30px 28px 34px;border-top:3px solid var(--accent-soft);transition:transform .35s var(--ease),box-shadow .35s}
+  .member:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(30,5,8,.45)}
+  .member.wide{grid-column:span 3}
+  .member .role{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-soft);padding-bottom:12px;border-bottom:1px solid var(--line-inv);margin-bottom:18px}
+  .member h4{font-weight:700;font-size:22px;color:#F6F2EC;margin:0 0 10px}
+  .member p{margin:0;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.85}
+  @media(max-width:900px){.member,.member.wide{grid-column:span 6}}
+
   /* ============ contact ============ */
   .contact{background:var(--paper-2);border-top:1px solid var(--line)}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 90px}
+  .contact-head{grid-column:1/-1;margin-bottom:48px}
   @media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:52px}}
-  .info dl{margin:44px 0 0;display:grid;gap:28px}
-  .info dt{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-  .info dd{margin:0;font-size:15.5px}
-  .info dd a{border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .25s}
-  .info dd a:hover{border-color:var(--accent)}
-  form{display:grid}
-  .field{border-bottom:1px solid var(--line);padding:15px 0}
-  .field label{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .field input,.field textarea{width:100%;border:0;background:transparent;font-family:var(--sans);font-size:15px;color:var(--ink);padding:4px 0;outline:none;resize:vertical}
-  form .btn{margin-top:32px;justify-self:start}
+  .info{display:grid;grid-template-rows:repeat(4,1fr)}
+  .citem{display:grid;gap:7px;justify-items:start;align-content:center}
+  .cicon{width:46px;height:46px;border-radius:50%;background:rgba(193,58,58,.12);color:var(--wine);display:flex;align-items:center;justify-content:center}
+  .cicon svg{width:21px;height:21px}
+  .citem b{font-size:15.5px;color:var(--wine);letter-spacing:.01em}
+  .citem .val{font-size:15px;line-height:1.7;max-width:46ch}
+  .citem .val a{display:inline-block;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .25s,border-color .25s,transform .25s var(--ease),background .25s}
+  .citem .val a:hover{color:var(--accent);border-color:var(--accent);background:rgba(193,58,58,.08);transform:translateY(-2px)}
+  .citem .val a:active{animation:pop .35s var(--ease)}
+  @keyframes pop{0%{transform:scale(1)}40%{transform:scale(.88)}70%{transform:scale(1.06)}100%{transform:scale(1)}}
+  .citem .val a.dir-link{margin-top:6px;background:var(--accent);color:#fff;border:0;padding:10px 20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .citem .val a.dir-link:hover{background:var(--wine);color:#fff;transform:translateY(-2px)}
+  form{display:grid;grid-template-rows:repeat(4,1fr);height:100%}
+  .field{border:0;padding:0;align-content:center;display:grid;gap:9px}
+  .field label{display:block;font-size:13.5px;letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:9px}
+  .field input,.field textarea{width:100%;border:1px solid rgba(22,19,15,.4);border-radius:8px;background:#fff;font-family:var(--sans);font-size:15px;color:var(--ink);padding:13px 14px;outline:none;resize:vertical;transition:border-color .25s}
+  .field input:focus,.field textarea:focus{border-color:var(--accent)}
+  form .btn{justify-self:start;align-self:center;border-radius:8px;text-transform:none;letter-spacing:.01em;font-size:15px;font-weight:600;padding:13px 28px}
 
   /* ============ footer ============ */
   footer{background:var(--wine-deep);color:rgba(255,255,255,.6);padding:48px 0}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
-  footer img{height:26px;opacity:.92}
+  footer .wrap{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  footer img{height:28px;opacity:.92}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
   .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.hero-bg{animation:none}.hero .eyebrow{animation:none;background:none;color:#fff}}
 </style>
 </head>
 <body>
@@ -193,6 +208,7 @@
     <img id="brandImg" src="logo.png" alt="CUBE — Shanghai Cube Expo Service Co., Ltd.">
   </a>
   <div class="links" id="links">
+    <a href="#top">Home</a>
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#process">Service</a>
@@ -225,61 +241,20 @@
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="mq">
-    <span>Booth design</span><span>Fabrication</span><span>Global install</span><span>Shanghai</span><span>Munich</span><span>Dubai</span><span>Las Vegas</span><span>Hong Kong</span><span>Since 2013</span>
-  </div>
-</div>
-
 <section class="sec" id="about">
   <div class="wrap split reveal">
     <div>
       <div class="label">Who we are</div>
       <h2>One team from first sketch to final handover.</h2>
-      <p style="margin:20px 0 0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)">Since 2013 — Booth design · Fabrication · Global install</p>
       <div style="margin-top:34px">
         <p class="drop">Shanghai Cube Expo Service Co., Ltd. manages every phase of your exhibition booth — from initial concept and design to fabrication and on-site installation. Based in Shanghai with a global reach, we work across industries and exhibition formats, bringing hands-on expertise and close attention to detail to every project.</p>
         <p>Our process starts with understanding your goals, then moves through material selection, structural planning and build — keeping quality consistent at every step. Whether you are presenting at a major trade fair or a specialised industry event, we build booths that reflect your brand accurately, function well on a live show floor, and make an impression on the people you are there to meet.</p>
+        <p>Over the years we have delivered booths for clients in medtech, automotive, industrial equipment and consumer brands — at venues across China, Europe and the Middle East. Our in-house team covers 3D design, graphic production, lighting, AV integration and logistics, so you deal with one partner instead of a chain of subcontractors. After the show, we handle dismantling, storage and reuse, helping you get more value from every square metre of your stand.</p>
       </div>
     </div>
     <figure class="frame" style="margin:0">
-      <img src="assets/booth-red.jpg" alt="Rendered exhibition booth with red backdrop" loading="lazy">
-      <figcaption>Concept — Booth 1:1 visual</figcaption>
+      <img src="assets/booth-welcome.jpg" alt="Red exhibition booth with sculptural centrepiece" loading="lazy">
     </figure>
-  </div>
-</section>
-
-<section class="work sec" id="work">
-  <div class="wrap">
-    <div class="work-head reveal">
-      <div>
-        <div class="label">Selected work</div>
-        <h2>Built for brands that need to be seen.</h2>
-      </div>
-      <p>A cross-section of recent projects — medtech, automotive, industrial and consumer — delivered across China, Europe and the Middle East.</p>
-    </div>
-    <div class="grid reveal">
-      <figure class="item big" style="margin:0">
-        <img src="assets/work-depuy.jpg" alt="Large island booth for DePuy Synthes" loading="lazy">
-        <div class="cap"><b>DePuy Synthes</b><span>Island booth · Medical</span></div>
-      </figure>
-      <figure class="item" style="margin:0">
-        <img src="assets/work-te.jpg" alt="Booth for TE Connectivity" loading="lazy">
-        <div class="cap"><b>TE Connectivity</b><span>Trade fair · Tech</span></div>
-      </figure>
-      <figure class="item" style="margin:0">
-        <img src="assets/work-quasar.jpg" alt="Booth for Quasar MedTech" loading="lazy">
-        <div class="cap"><b>Quasar MedTech</b><span>Corner booth · Medical</span></div>
-      </figure>
-      <figure class="item" style="margin:0">
-        <img src="assets/work-nolato.jpg" alt="Booth for Nolato" loading="lazy">
-        <div class="cap"><b>Nolato</b><span>Two-storey · MedTech</span></div>
-      </figure>
-      <figure class="item" style="margin:0">
-        <img src="assets/hero.jpg" alt="Exhibition hall crowd" loading="lazy">
-        <div class="cap"><b>Trade fair floor</b><span>Hall management</span></div>
-      </figure>
-    </div>
   </div>
 </section>
 
@@ -300,6 +275,46 @@
   </div>
 </section>
 
+<section class="work sec" id="work">
+  <div class="wrap">
+    <div class="work-head reveal">
+      <div>
+        <div class="label">Latest work</div>
+        <h2>Built for brands that need to be seen.</h2>
+      </div>
+    </div>
+    <div class="grid reveal">
+      <figure class="item big" style="margin:0" data-title="DePuy Synthes">
+        <img src="assets/work-depuy.jpg" alt="Large island booth for DePuy Synthes" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="TE Connectivity">
+        <img src="assets/work-te.jpg" alt="Booth for TE Connectivity" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="QUASAR">
+        <img src="assets/work-quasar.jpg" alt="Booth for Quasar MedTech" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="Nolato">
+        <img src="assets/work-nolato.jpg" alt="Booth for Nolato" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="ELOF HANSSON / FRANK-PTI / PTS">
+        <img src="assets/work-elof.jpg" alt="Custom double-brand exhibition booth" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="LUXILON MEDICAL">
+        <img src="assets/work-luxilon.jpg" alt="Booth for Luxilon Medical" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="MKS | NEWPORT">
+        <img src="assets/work-mks.jpg" alt="Booth for MKS Newport" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="BOLLHOFF">
+        <img src="assets/work-bollhoff.jpg" alt="Two-storey booth for Bollhoff" loading="lazy">
+      </figure>
+      <figure class="item" style="margin:0" data-title="WERMA">
+        <img src="assets/work-werma.jpg" alt="Booth for Werma Signaltechnik" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="process">
   <div class="wrap reveal">
     <div class="label">How we work</div>
@@ -313,36 +328,91 @@
   </div>
 </section>
 
-<section class="contact sec" id="contact">
-  <div class="wrap contact-grid reveal">
-    <div>
-      <div class="label">Contact</div>
-      <h2>Tell us about your next show.</h2>
-      <div class="info">
-        <dl>
-          <div><dt>Company</dt><dd>Shanghai Cube Expo Service Co., Ltd.</dd></div>
-          <div><dt>Based in</dt><dd>Shanghai, China</dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:robbiedingdayi@outlook.com">robbiedingdayi@outlook.com</a></dd></div>
-        </dl>
+<section class="sec" id="team" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="label">Meet the Team</div>
+    <h2>Leadership behind Cube Expo.</h2>
+    <div class="team-grid">
+      <div class="member">
+        <div class="role">General manager &amp; Sales director</div>
+        <h4>Robbie Ding</h4>
+        <p>15+ years leading booth construction and exhibition services. Proven partner to Fortune 500 companies and premier venues. Strategy-driven. Results-focused.</p>
+      </div>
+      <div class="member">
+        <div class="role">Project manager</div>
+        <h4>Trancy Wu</h4>
+        <p>Manages construction timelines and on-site coordination for every build. Her attention to detail ensures every booth comes together on schedule and within scope.</p>
+      </div>
+      <div class="member">
+        <div class="role">Logistics manager</div>
+        <h4>Mary Zhang</h4>
+        <p>Expert in logistics, vendor negotiation, and crisis management. 98% on-time delivery. Zero lost or damaged components for five consecutive years.</p>
+      </div>
+      <div class="member wide">
+        <div class="role">Design director</div>
+        <h4>Michael Song</h4>
+        <p>10+ years of experience designing and building high-impact trade show environments for Fortune 500 clients across industries ranging from technology and automotive to healthcare and consumer goods.</p>
+      </div>
+      <div class="member wide">
+        <div class="role">Production head</div>
+        <h4>Tommy Ruan</h4>
+        <p>Specialized in lean manufacturing principles that minimize waste without compromising output, rigorous quality control standards applied at every stage of production, and precision custom fabrication techniques tailored to the exact specifications of each project.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="contact sec" id="contact">
+  <div class="wrap contact-grid reveal">
+    <div class="contact-head">
+      <div class="label">Contact</div>
+      <h2>Tell us about your next show.</h2>
+    </div>
+    <div class="info">
+        <div class="citem">
+          <span class="cicon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          <b>Email</b>
+          <span class="val"><a href="mailto:robbiedingdayi@outlook.com">robbiedingdayi@outlook.com</a></span>
+        </div>
+        <div class="citem">
+          <span class="cicon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          <b>Phone</b>
+          <span class="val"><a href="tel:+8618702115020">18702115020</a></span>
+        </div>
+        <div class="citem">
+          <span class="cicon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          </span>
+          <b>Address</b>
+          <span class="val">Room 2784, Area A, Building 2, No. 88 Deli West Road, Jiading District, Shanghai, P.R.China<br><a class="dir-link" href="https://maps.google.com/?q=Room+2784,+Area+A,+Building+2,+No.+88+Deli+West+Road,+Jiading+District,+Shanghai" target="_blank" rel="noopener">Get directions</a></span>
+        </div>
+        <div class="citem">
+          <span class="cicon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.9 4 3 6.4 3 9.4c0 1.7 1 3.2 2.4 4.2l-.6 1.9 2.2-1.1c.8.2 1.6.3 2.5.3h.4c-.1-.4-.2-.8-.2-1.2 0-2.9 2.9-5.2 6.4-5.2h.3C15.8 5.9 12.9 4 9.5 4zm-2.2 3.1c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm4.4 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"/><path d="M21 13.6c0-2.4-2.4-4.4-5.4-4.4s-5.4 2-5.4 4.4 2.4 4.4 5.4 4.4c.6 0 1.2-.1 1.8-.2l1.9.9-.5-1.6c1.3-.8 2.2-2.1 2.2-3.5zm-7.2-1.2c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7zm3.6 0c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/></svg>
+          </span>
+          <b>WeChat</b>
+          <span class="val">robbiedingdayi</span>
+        </div>
+      </div>
     <form id="form" novalidate>
-      <div class="field"><label for="name">Name</label><input id="name" name="name" placeholder="Your name" required></div>
-      <div class="field"><label for="company">Company</label><input id="company" name="company" placeholder="Company name"></div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required></div>
-      <div class="field"><label for="msg">Project</label><textarea id="msg" name="msg" rows="3" placeholder="Show name, dates, booth size…"></textarea></div>
-      <button class="btn" type="submit">Send enquiry
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      <div class="field"><label for="name">Your Name</label><input id="name" name="name" placeholder="Your name" required></div>
+      <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="you@company.com" required></div>
+      <div class="field"><label for="msg">Tell us about your exhibition needs</label><textarea id="msg" name="msg" rows="6" placeholder="Show name, dates, booth size…"></textarea></div>
+      <button class="btn" type="submit">Send Message</button>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo-white.png" alt="CUBE logo">
-    <span>Shanghai Cube Expo Service Co., Ltd.</span>
-    <span id="year"></span>
+    <div class="foot-brand">
+      <img src="assets/logo-white.png" alt="CUBE logo">
+      <span>Shanghai Cube Expo Service Co., Ltd.</span>
+    </div>
   </div>
 </footer>
 
@@ -363,22 +433,34 @@
     }
   });
 
-  var mq = document.getElementById('mq');
-  mq.innerHTML += mq.innerHTML; /* seamless loop */
-
   var io = new IntersectionObserver(function(es){
     es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
   }, {threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  document.getElementById('year').textContent = '© ' + new Date().getFullYear();
-
   document.getElementById('form').addEventListener('submit', function(e){
     e.preventDefault();
     var f = e.target;
-    var body = 'Name: ' + f.name.value + '\nCompany: ' + f.company.value + '\nEmail: ' + f.email.value + '\n\n' + f.msg.value;
-    window.location.href = 'mailto:robbiedingdayi@outlook.com?subject=' + encodeURIComponent('Booth enquiry — ' + (f.company.value || f.name.value)) + '&body=' + encodeURIComponent(body);
+    var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.msg.value;
+    window.location.href = 'mailto:robbiedingdayi@outlook.com?subject=' + encodeURIComponent('Booth enquiry — ' + f.name.value) + '&body=' + encodeURIComponent(body);
   });
+
+  /* work lightbox */
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<img alt=""><div class="lb-title"></div>';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img'), lbTitle = lb.querySelector('.lb-title');
+  document.querySelectorAll('.item').forEach(function(it){
+    it.addEventListener('click', function(){
+      var img = it.querySelector('img');
+      lbImg.src = img.src;
+      lbTitle.textContent = it.getAttribute('data-title') || '';
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
 </script>
 </body>
 </html>
