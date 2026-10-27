@@ -28,6 +28,7 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   .wrap{width:min(1240px,calc(100% - 80px));margin:0 auto}
+  .work .wrap{width:min(1600px,calc(100% - 48px))}
   @media(max-width:760px){.wrap{width:calc(100% - 40px)}}
   ::selection{background:var(--accent);color:#fff}
 
@@ -69,7 +70,7 @@
   .hero .eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;margin-bottom:30px;background:linear-gradient(100deg,#F6F2EC 25%,var(--accent-soft) 45%,#fff 55%,#F6F2EC 75%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(217,132,132,.35));animation:shine 4.5s linear infinite}
   .hero .eyebrow::before,.hero .eyebrow::after{content:"";width:64px;height:1.5px;background:var(--accent-soft);box-shadow:0 0 10px rgba(217,132,132,.9),0 0 22px rgba(217,132,132,.5)}
   @keyframes shine{from{background-position:130% 0}to{background-position:-130% 0}}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,72px);line-height:1.05;letter-spacing:-.02em;margin:0 auto;max-width:16ch;text-wrap:balance}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,96px);line-height:1.05;letter-spacing:-.02em;margin:0 auto;max-width:16ch;text-wrap:balance}
   h1 em{font-style:normal;color:var(--accent-soft)}
   .hero .lede{margin:30px auto 0;max-width:52ch;font-size:15.5px;line-height:1.9;color:rgba(255,255,255,.82)}
   .hero-actions{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:84px;flex-wrap:wrap}
@@ -114,17 +115,17 @@
   .item{position:relative;overflow:hidden;background:#0C0203}
   .item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),opacity .5s;display:block}
   .item:hover img{transform:scale(1.05)}
-  .item{grid-column:span 6}
-  .item.big{grid-column:span 12}
-  .item.big img{aspect-ratio:21/9}
-  .item:not(.big) img{aspect-ratio:4/2.55}
+  .item{grid-column:span 4}
+  .item.big{grid-column:span 4}
+  .item.big img{aspect-ratio:4/2.55}
+  .item:not(.big) img{aspect-ratio:4/3}
   .item{cursor:zoom-in}
   .item img{filter:brightness(.92) saturate(1.02)}
   .item:hover img{filter:brightness(1.12) saturate(1.08);box-shadow:0 0 0 1px rgba(255,255,255,.18),0 12px 44px rgba(0,0,0,.55)}
   /* lightbox */
-  .lightbox{position:fixed;inset:0;background:#050202;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:200;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);cursor:zoom-out;padding:32px}
+  .lightbox{position:fixed;inset:0;background:#050202;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:200;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);cursor:zoom-out;padding:20px}
   .lightbox.open{opacity:1;pointer-events:auto}
-  .lightbox img{max-width:min(1100px,92vw);max-height:78vh;width:auto;height:auto;box-shadow:0 30px 90px rgba(0,0,0,.7);transform:scale(.94);transition:transform .35s var(--ease)}
+  .lightbox img{max-width:min(1560px,96vw);max-height:84vh;width:auto;height:auto;box-shadow:0 30px 90px rgba(0,0,0,.7);transform:scale(.94);transition:transform .35s var(--ease)}
   .lightbox.open img{transform:scale(1)}
   .lightbox .lb-title{font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:.5px}
   @media(max-width:760px){.item,.item.big{grid-column:span 12}.item.big img{aspect-ratio:16/9}.item:not(.big) img{aspect-ratio:4/2.7}}
@@ -134,7 +135,7 @@
   .band-bg{position:absolute;inset:0;background:url("assets/feature-gold.jpg") center/cover no-repeat}
   .band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 90% at 50% 50%,rgba(20,4,7,.28) 0%,rgba(20,4,7,.72) 100%)}
   .band-inner{position:relative;z-index:2;padding:110px 30px}
-  .band blockquote{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.6vw,60px);line-height:1.15;letter-spacing:-.01em;max-width:22ch;text-wrap:balance}
+  .band blockquote{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.6vw,60px);line-height:1.15;letter-spacing:-.01em;max-width:22ch;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.65),0 0 60px rgba(0,0,0,.4);padding:26px 34px;background:rgba(10,5,5,.32);border-radius:14px;backdrop-filter:blur(3px)}
   .band .who{margin-top:30px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 
   /* ============ stats ============ */
@@ -262,7 +263,6 @@
   <div class="band-bg" role="img" aria-label="Golden curved pavilion structure"></div>
   <div class="band-inner reveal">
     <blockquote>“We don't decorate spaces. We build the reason people stop walking.”</blockquote>
-    <div class="who">Cube Expo — Design principle</div>
   </div>
 </section>
 
